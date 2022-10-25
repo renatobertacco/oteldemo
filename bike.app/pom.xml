@@ -10,4 +10,13 @@
     <name>bike.app</name>
     <description>Bike service for OpenTelemetry demo</description>
     <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.opentelemetry.instrumentation</groupId>
+            <artifactId>opentelemetry-instrumentation-annotations</artifactId>
+            <version>1.19.1-alpha</version>
+        </dependency>
+
+    </dependencies>
 </project>

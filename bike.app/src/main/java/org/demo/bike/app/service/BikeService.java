@@ -19,6 +19,8 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
+import io.opentelemetry.instrumentation.annotations.WithSpan;
+
 @Service
 public class BikeService {
 
@@ -58,6 +60,7 @@ public class BikeService {
                 .withMatcher("model", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase()))));
     }
 
+    @WithSpan
     public BikeDTO setRentedBy(long bikeId, Long clientId) {
         Bike bike = repo.findById(bikeId).orElse(null);
         if (bike != null) {
